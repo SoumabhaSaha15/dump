@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 2s linear;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #deb887;
+  font-weight: 900;
+  text-transform: uppercase ;
+}
+
+body,
+html {
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  /* background-color: black; */
+  background-blend-mode: color;
+  & div#root {
+    /* background-color: black; */
+    & header,footer {
+      width: 100%;
+      text-align: center;
+      height: 6svh;
+      line-height: 6svh;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    & main {
+      height: 88svh;
+      min-height: 88svh;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, calc(25% - 3px));
+      place-items: center;
+      gap: 4px;
+      grid-auto-rows: 50%;
+      background-position: center center;
+      background-size: 100%;
+      background-repeat: no-repeat no-repeat;
+      overflow: auto;
+      & div {
+        display: grid;
+        place-items: center;
+        backdrop-filter: blur(3px);
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 0;
+        max-height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        background-position: center center;
+        background-size: 100%;
+        background-repeat: no-repeat no-repeat;
+      }
+
+      & div:hover {
+        background-size: 200%;
+      }
+    }
+  }
+}
+@media only screen and (max-width:768px){
+  main{
+    grid-template-columns: repeat(auto-fill, calc(50% - 4px)) !important;
+    gap: 4px !important;
+  }
+}
